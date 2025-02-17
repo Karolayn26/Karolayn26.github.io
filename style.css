@@ -182,9 +182,12 @@ h2{
 .general-img{
     width: 50%;
     text-align: center;
+    
+    
 }
 .general-img img{
     width: 50%;
+    
 }
 .general-txt{
     width: 50%;
@@ -222,6 +225,7 @@ h2{
 .pan-1 img {
     width: 40px;
     height: 40px;
+ 
 }
 .pan-1 h3{
     color: #fff9ED;
@@ -256,3 +260,14 @@ h2{
 .footer-content a:hover{
     color: #fedab6;
 } 
+@media (max-width: 600px) {
+    /* Estilos para dispositivos móviles */
+    body {
+      font-size: 14px;
+    }
+    .container {
+      padding: 10px;
+    }
+    /* Otros estilos específicos para móviles */
+  }
+  
