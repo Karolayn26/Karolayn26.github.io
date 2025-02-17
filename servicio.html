@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffet de Abogados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .about, .values {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .about h2, .values h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .about p, .values p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 2rem;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .carousel-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .carousel-item p {
+            line-height: 1.6;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <section class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <h3>Asesoramiento Corporativo</h3>
+                <p>Brindamos soporte legal integral para empresas, ayudándolas a cumplir con las normativas y optimizar sus operaciones.</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Defensa Penal</h3>
+                <p>Defendemos los derechos de nuestros clientes con dedicación y experiencia en casos penales complejos.</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Derecho Familiar</h3>
+                <p>Ofrecemos orientación en casos de divorcio, custodia y otros asuntos familiares con sensibilidad y profesionalismo.</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Contracto de Alquiler</h3>
+                <p>Ofrecemos orientación en servicios de alquier de casas ,apartamentos , locales .</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Depuracion de armas</h3>
+                <p>Ofrecemos servicios de de Depuracion de fichas y armas .
+                    
+                </p>
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" id="prev">&#10094;</button>
+            <button class="carousel-button" id="next">&#10095;</button>
+        </div>
+    </section>
+    
+</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.3738053386505!2d-69.89643832561343!3d18.466719682616358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8825befd5cf3%3A0xd36996aec27fb68!2sC.%20Fabio%20Fiallo%2C%2010208%20Santo%20Domingo!5e0!3m2!1ses!2sdo!4v1737892895775!5m2!1ses!2sdo" width="8000" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<footer>
+    <p>&copy; 2025 Buffet de Abogados. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+        const width = items[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * width}px)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+        updateCarousel(currentIndex);
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel(currentIndex);
+    });
+</script>
+
